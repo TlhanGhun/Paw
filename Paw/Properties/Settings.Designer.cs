@@ -22,5 +22,53 @@ namespace Paw.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowServerMessages {
+            get {
+                return ((bool)(this["ShowServerMessages"]));
+            }
+            set {
+                this["ShowServerMessages"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("23053")]
+        public int GrowlListenPort {
+            get {
+                return ((int)(this["GrowlListenPort"]));
+            }
+            set {
+                this["GrowlListenPort"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AllowFlash {
+            get {
+                return ((bool)(this["AllowFlash"]));
+            }
+            set {
+                this["AllowFlash"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AllowNetworkNotifications {
+            get {
+                return ((bool)(this["AllowNetworkNotifications"]));
+            }
+            set {
+                this["AllowNetworkNotifications"] = value;
+            }
+        }
     }
 }

@@ -481,7 +481,7 @@ namespace Snarl
 			byte[] returnString = new byte[SNARL_STRING_LENGTH];
 
 			UTF8Encoding utf8 = new UTF8Encoding();
-			utf8.GetBytes(strToConvert, 0, Math.Min(strToConvert.Length,500), returnString, 0);
+			utf8.GetBytes(strToConvert, 0, strToConvert.Length, returnString, 0);
 
 			return returnString;
 		}
