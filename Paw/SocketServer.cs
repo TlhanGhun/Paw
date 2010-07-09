@@ -70,6 +70,12 @@ namespace Paw
             textBoxIP.Text = GetIP();
 
             ButtonStartListenClick(null, null);
+
+            if (BonjourService.IsSupported)
+            {
+                BonjourService myBonjour = new BonjourService(String.Format("Paw on {0}", Environment.MachineName), "_gntp._tcp");
+                myBonjour.Start(23053);
+            }
         }
 
 

@@ -34,6 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Mono.Zeroconf, Version=4.0.0.90, Culture=neutral, PublicKeyToken=e60c4f4a95e1099e, processorArchitecture=MSIL" />
+    <Reference Include="Mono.Zeroconf.Providers.Bonjour, Version=4.0.0.90, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -53,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Attribute.cs" />
     <Compile Include="BinaryDataByIdentifier.cs" />
+    <Compile Include="Bonjour.cs" />
     <Compile Include="extension.cs" />
     <Compile Include="ExtensionWindow.cs" />
     <Compile Include="HelperFunctions.cs" />
@@ -108,6 +111,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ExternalClasses\Mono.Zeroconf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalClasses\Mono.Zeroconf.Providers.Bonjour.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Paw.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
