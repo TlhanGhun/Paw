@@ -41,6 +41,19 @@ namespace Paw
             InitializeComponent();
             appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Tlhan Ghun\\Paw\\";
             appProgramPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+            try
+            {
+                if (Properties.Settings.Default.useAutomaticUpdate)
+                {
+                    Winkle.VersionCheck myUpdateChecker = new Winkle.VersionCheck("Paw", "http://tlhan-ghun.de/files/pawWinkle.xml");
+                    Winkle.UpdateInfo myUpdateResponse = myUpdateChecker.checkForUpdate(System.Reflection.Assembly.GetExecutingAssembly(), true);
+                    Console.WriteLine("Update check done");
+                }
+            }
+            catch 
+            {
+                
+            }
             passwordManager = new PasswordManager();
             registeredApps = new Dictionary<string, GrowlApplication>();
             pawIconPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\Paw.ico";
@@ -105,6 +118,8 @@ namespace Paw
                 label_serverState.Content = "GNTP Listener running";
                 ellipse_ServerState.Fill = Brushes.Green;
                 m_notifyIcon.Text = "Paw - listening";
+
+
         }
 
         private void stopServer()
